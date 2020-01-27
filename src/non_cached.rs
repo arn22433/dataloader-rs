@@ -59,7 +59,7 @@ impl<K, V, E, F> Loader<K, V, E, F> {
         };
         LoadFuture {
             id,
-            delay: None,
+            delay: delay: Some(Delay::new(Duration::from_millis(10))),
             stage: Stage::Created,
             state: self.state.clone(),
         }
